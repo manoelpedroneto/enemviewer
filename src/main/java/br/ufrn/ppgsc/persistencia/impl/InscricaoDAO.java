@@ -1,4 +1,4 @@
-package br.ufrn.ppgsc.persistence;
+package br.ufrn.ppgsc.persistencia.impl;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.hibernate.Session;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.ufrn.ppgsc.dominio.Inscricao;
-import br.ufrn.ppgsc.repositorio.IInscricaoDAO;
+import br.ufrn.ppgsc.persistencia.IInscricaoDAO;
 
 @Component
 public class InscricaoDAO extends GenericDAO<Inscricao, Long> implements IInscricaoDAO {

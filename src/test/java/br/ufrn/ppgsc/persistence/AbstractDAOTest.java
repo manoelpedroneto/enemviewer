@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
-import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -32,14 +31,6 @@ public class AbstractDAOTest extends TestCase {
 	public void setUp() throws Exception {
 		session = sessionFactory.openSession();
 		transaction = session.beginTransaction();
-	}
-
-	@After
-	public void tearDown() throws Exception {
-		if (transaction != null) {
-			transaction.rollback();
-		}
-		session.close();
 	}
 
 }

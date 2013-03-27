@@ -1,10 +1,11 @@
-package br.ufrn.ppgsc.negocio;
+package br.ufrn.ppgsc.negocio.impl;
 
 import java.util.List;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.ufrn.ppgsc.dominio.Inscricao;
-import br.ufrn.ppgsc.repositorio.IInscricaoDAO;
+import br.ufrn.ppgsc.negocio.IInscricaoBC;
+import br.ufrn.ppgsc.persistencia.IInscricaoDAO;
 
 @Component
 public class InscricaoBC implements IInscricaoBC {

@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.ufrn.ppgsc.dominio.Inscricao;
+import br.ufrn.ppgsc.persistencia.impl.InscricaoDAO;
 
 public class InscricaoDAOTest extends AbstractDAOTest {
 	

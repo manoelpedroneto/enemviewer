@@ -1,4 +1,4 @@
-package br.ufrn.ppgsc.repositorio;
+package br.ufrn.ppgsc.persistencia;
 
 import java.io.Serializable;
 import java.util.List;

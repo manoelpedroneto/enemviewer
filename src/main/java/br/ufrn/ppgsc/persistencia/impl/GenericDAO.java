@@ -1,11 +1,11 @@
-package br.ufrn.ppgsc.persistence;
+package br.ufrn.ppgsc.persistencia.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import org.hibernate.Session;
 
-import br.ufrn.ppgsc.repositorio.IDAO;
+import br.ufrn.ppgsc.persistencia.IDAO;
 
 public class GenericDAO<Model, ID extends Number> implements IDAO<Model, ID>  {
 	

@@ -5,14 +5,14 @@ import br.com.caelum.vraptor.Result;
 import br.ufrn.ppgsc.negocio.IInscricaoBC;
 
 @Resource
-public class ImportadorController {
+public class GraficosController {
 	
 	private Result result;
 	
 	private IInscricaoBC inscricaoBC;
 	
 	
-	public ImportadorController(Result result, IInscricaoBC inscBC) {
+	public GraficosController(Result result, IInscricaoBC inscBC) {
 		this.result = result;
 		this.inscricaoBC = inscBC;
 	}
