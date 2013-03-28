@@ -30,6 +30,10 @@ public class UnidadeFederativa implements IPersistente<Long> {
 		this.id = id;
 	}
 	
+	public UnidadeFederativa(String sigla) {
+		this.sigla = sigla;
+	}
+	
 	@Override
 	public String toString() {
 		return nome;

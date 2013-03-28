@@ -2,19 +2,14 @@ package br.ufrn.ppgsc.controller;
 
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
-import br.ufrn.ppgsc.negocio.IInscricaoBC;
 
 @Resource
 public class GraficosController {
 	
 	private Result result;
 	
-	private IInscricaoBC inscricaoBC;
-	
-	
-	public GraficosController(Result result, IInscricaoBC inscBC) {
+	public GraficosController(Result result) {
 		this.result = result;
-		this.inscricaoBC = inscBC;
 	}
 	
 	public void form() {

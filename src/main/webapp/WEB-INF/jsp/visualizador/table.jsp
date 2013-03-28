@@ -18,8 +18,29 @@
     </div>
 
 	<div class="container">
-
-		Tabela com dados do resultado da busca + Gráfico.
+		<fieldset>
+			<legend><strong> ${uf.nome} </strong> com a quantidade de inscritos agrupados por Sexo</legend>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Cidade</th>
+						<th>Masculino</th>
+						<th>Feminino</th>
+					</tr>
+				</thead>
+				<tbody>				
+					<c:forEach items="${list}" var="obj" varStatus="status">
+						<tr>
+							<td>${status.count}</td> 
+							<td>${obj[0]}</td> 
+							<td><a href="<c:url value="/" />">${obj[1]}</a></td>  
+							<td><a href="<c:url value="/" />">${obj[2]}</a></td> 
+						</tr>	
+					</c:forEach>
+				</tbody>
+			</table>
+		</fieldset>
 
 		
 <%@ include file="../footer.jsp" %>

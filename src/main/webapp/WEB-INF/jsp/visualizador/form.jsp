@@ -19,12 +19,13 @@
 
 	<div class="container">
 
-	<form action="/visualizador/table">
+	<form action="<c:url value="/visualizador/table"/>" class="form-inline">
 		<fieldset>
 			<legend>Selecione uma Unidade Federativa</legend>
-			<label>Unidades Federativas (UF):</label> <select>
+			<label>Unidades Federativas (UF):</label> 
+			<select name="unidadeFederativa.id">
 				<c:forEach items="${list}" var="unidade">
-					<option value="${unidade.sigla}">${unidade.nome}</option>
+					<option value="${unidade.id}">${unidade.nome}</option>
 				</c:forEach>
 			</select>
 			<button type="submit" class="btn btn-primary">Gerar Tabela</button>

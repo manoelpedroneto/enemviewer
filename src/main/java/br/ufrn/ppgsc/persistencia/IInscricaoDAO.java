@@ -3,14 +3,13 @@ package br.ufrn.ppgsc.persistencia;
 import java.util.List;
 
 import br.ufrn.ppgsc.dominio.Inscricao;
+import br.ufrn.ppgsc.dominio.UnidadeFederativa;
 
 
 public interface IInscricaoDAO extends IDAO<Inscricao, Long> {
 	
-	public Long contar();
+	public List<Object> buscarSexosPorUF(UnidadeFederativa uf);
 	
-	public List<Inscricao> findBySexo(Character sexo);
-	
-	public List<Object> findMediaIdadePorMunicipio(String uf);
+	public List<Object> buscarMediaIdadePorUF(UnidadeFederativa uf);
 	
 }

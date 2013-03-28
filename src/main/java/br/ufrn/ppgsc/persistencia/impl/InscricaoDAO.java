@@ -7,6 +7,7 @@ import org.hibernate.Session;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.ufrn.ppgsc.dominio.Inscricao;
+import br.ufrn.ppgsc.dominio.UnidadeFederativa;
 import br.ufrn.ppgsc.persistencia.IInscricaoDAO;
 
 @Component
@@ -16,26 +17,31 @@ public class InscricaoDAO extends GenericDAO<Inscricao, Long> implements IInscri
 		super(session);
 	}
 
-	@Override
-	public Long contar() {
-		return (Long) getSession().createQuery("select count(*) from Inscricao").uniqueResult();
-	}
-
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Inscricao> findBySexo(Character sexo) {
-		String hql = "select i from Inscricao i where i.sexo = :sexo";
-		Query query = getSession().createQuery(hql);
-		query.setCharacter("sexo", sexo);
+	public List<Object> buscarSexosPorUF(UnidadeFederativa uf) {
+		
+		String sql = "SELECT feminino.no_municipio_insc, feminino.totalf, masculino.totalm  FROM " +
+				" (SELECT DISTINCT no_municipio_insc, COUNT(*) AS totalf " +
+				"    FROM enem_" + uf.getSigla() +
+				"     WHERE tp_sexo = 'F' GROUP BY no_municipio_insc" +
+				"    	ORDER BY no_municipio_insc) AS feminino, " +
+				" (SELECT DISTINCT no_municipio_insc, COUNT(*) AS totalm " +
+				"		FROM enem_"  + uf.getSigla() +
+				"  		 WHERE tp_sexo = 'M' GROUP BY no_municipio_insc " +
+				"   	   ORDER BY no_municipio_insc) AS masculino " +
+				" WHERE feminino.no_municipio_insc = masculino.no_municipio_insc ";
+		
+		Query query = getSession().createSQLQuery(sql);
 		return query.list();		
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Object> findMediaIdadePorMunicipio(String uf) {
-		String sql = "select no_municipio_insc, round(avg(idade), 1) from enem_" + uf +
+	public List<Object> buscarMediaIdadePorUF(UnidadeFederativa uf) {
+		String sql = "select no_municipio_insc, round(avg(idade), 1) from enem_" + uf.getSigla() +
 				" group by no_municipio_insc ORDER BY round(avg(idade), 1)";
 		Query q = getSession().createSQLQuery(sql);
 		return q.list();
-	}
+	}	
 
 }

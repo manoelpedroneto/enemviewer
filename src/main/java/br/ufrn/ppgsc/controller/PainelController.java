@@ -4,17 +4,17 @@ import java.util.List;
 
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
-import br.ufrn.ppgsc.negocio.IInscricaoBC;
+import br.ufrn.ppgsc.dominio.UnidadeFederativa;
+import br.ufrn.ppgsc.negocio.IPainelBC;
 
 @Resource
 public class PainelController {
 	
 	private Result result;
 	
-	private IInscricaoBC inscricaoBC;
+	private IPainelBC inscricaoBC;
 	
-	
-	public PainelController(Result result, IInscricaoBC business) {
+	public PainelController(Result result, IPainelBC business) {
 		this.result = result;
 		this.inscricaoBC = business;
 	}
@@ -23,10 +23,8 @@ public class PainelController {
 	public void chart(){
 		
 		/** Médias do RN*/
-		List<Object> mediasRN = inscricaoBC.calcularMediaIdadeRN();
+		List<Object> mediasRN = inscricaoBC.calcularMediaIdade(new UnidadeFederativa("rn"));
 		result.include("mediasRN", mediasRN);
-		
-		//TODO: Próximo gráfico do painel...
 		
 	}
 
