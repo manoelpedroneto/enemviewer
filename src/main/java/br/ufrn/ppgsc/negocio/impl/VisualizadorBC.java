@@ -20,7 +20,6 @@ public class VisualizadorBC implements IVisualizadorBC {
 		this.daoInsc = daoInsc;
 	}
 
-	
 	@Override
 	public UnidadeFederativa buscarUF(Long id) {
 		return daoUF.load(id);
@@ -35,6 +34,5 @@ public class VisualizadorBC implements IVisualizadorBC {
 	public List<Object> listarSexoInscritosPorUF(UnidadeFederativa uf) {
 		return daoInsc.buscarSexosPorUF(uf);
 	}
-
 	
 }

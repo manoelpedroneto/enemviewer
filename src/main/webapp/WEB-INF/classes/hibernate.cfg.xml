@@ -15,5 +15,6 @@
 		<!-- MODEL mapping -->
 		<mapping class="br.ufrn.ppgsc.dominio.Inscricao"/>
 		<mapping class="br.ufrn.ppgsc.dominio.UnidadeFederativa"/>
+		<mapping class="br.ufrn.ppgsc.dominio.Usuario"/>
 	</session-factory>
 </hibernate-configuration>

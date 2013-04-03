@@ -18,7 +18,12 @@
     </div>
 
     <div class="container">
-
+    
+    <c:forEach var="error" items="${errors}">
+		${error.category} ${error.message}<br />
+	</c:forEach>
+    
+    
       <div class="row-fluid">
       	<div class="span8">
       		<div class="hero-unit">
@@ -32,10 +37,10 @@
       	</div>
       	<div class="span4">
       		<h2> Cadastre-se </h2>
-			<form class="form-vertical">
-				<input type="text" placeholder="Nome"/>
-				<input type="text" placeholder="E-mail" />
-				<input type="password" placeholder="Senha" />
+			<form class="form-vertical" action="<c:url value="/usuario/cadastrar"/>" method="post">
+				<input type="text" placeholder="Nome" name="usuario.nome"/>
+				<input type="text" placeholder="E-mail" name="usuario.email"/>
+				<input type="password" placeholder="Senha" name="usuario.senha"/>
 				<br />	
 	        	<button type="submit" class="btn btn-primary">Cadastrar</button>
 			</form>      		
@@ -44,4 +49,4 @@
 
       <hr>
       
-<%@ include file="footer.jsp" %>      
+<%@ include file="footer.jsp" %>     

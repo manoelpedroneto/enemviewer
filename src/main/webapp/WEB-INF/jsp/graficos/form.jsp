@@ -19,16 +19,6 @@
 
 	<div class="container">
 	
-		<form class="form-vertical" action="<c:url value="/graficos/importar"/>">
-			<fieldset>
-				<label>Selecionar Arquivo: </label>
-				<input type="text" /> <br/>
-				<button type="submit" class="btn btn-primary">Importar</button>
-			</fieldset>
-		</form>
-		<hr>
-		
-		
 		<form action="/visualizador/chart">
 				<ul class="row thumbnails">
 					<li class="thumbnail">
