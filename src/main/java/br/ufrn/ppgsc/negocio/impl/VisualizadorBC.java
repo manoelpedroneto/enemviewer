@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.ufrn.ppgsc.dominio.UnidadeFederativa;
+import br.ufrn.ppgsc.exceptions.DatabaseException;
 import br.ufrn.ppgsc.negocio.IVisualizadorBC;
 import br.ufrn.ppgsc.persistencia.IInscricaoDAO;
 import br.ufrn.ppgsc.persistencia.IUnidadeFederativaDAO;
@@ -21,17 +22,17 @@ public class VisualizadorBC implements IVisualizadorBC {
 	}
 
 	@Override
-	public UnidadeFederativa buscarUF(Long id) {
+	public UnidadeFederativa buscarUF(Long id) throws DatabaseException {
 		return daoUF.load(id);
 	}
 	
 	@Override
-	public List<UnidadeFederativa> listarUnidadesFederativas() {
+	public List<UnidadeFederativa> listarUnidadesFederativas() throws DatabaseException {
 		return daoUF.listAll();
 	}
 
 	@Override
-	public List<Object> listarSexoInscritosPorUF(UnidadeFederativa uf) {
+	public List<Object> listarSexoInscritosPorUF(UnidadeFederativa uf) throws DatabaseException {
 		return daoInsc.buscarSexosPorUF(uf);
 	}
 	

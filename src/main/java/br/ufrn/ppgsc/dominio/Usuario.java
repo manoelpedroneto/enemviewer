@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "usuario", schema="public")
@@ -18,10 +21,14 @@ public class Usuario implements IPersistente<Long> {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "usuario_seq_generator")
 	private Long id;
 	
+	@NotNull
+	@Length(min=0)
 	private String nome;
 	
+	@NotNull
 	private String email;
 	
+	@NotNull
 	private String senha;
 
 

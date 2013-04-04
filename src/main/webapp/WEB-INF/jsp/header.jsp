@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Enem Viewer</title>
 
     <!-- styles -->
@@ -43,4 +44,5 @@
   </head>
 
   <body>
+  
 

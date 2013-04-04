@@ -1,6 +1,6 @@
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp"%>
 
-    <div class="navbar  navbar-fixed-top">
+  <div class="navbar  navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="<c:url value="/"/>">Enem Viewer</a>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="container">
- 
+    
       <div class="row-fluid">
       	<div class="span8">
       		<div class="hero-unit">
@@ -49,5 +49,5 @@
       </div>
 
       <hr>
-      
-<%@ include file="footer.jsp" %>     
+
+<%@ include file="../footer.jsp" %>
