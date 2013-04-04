@@ -12,6 +12,13 @@
               <li><a href="<c:url value="/graficos/form"/>"><i class="icon-signal"> </i> Gráficos</a></li>
               <li><a href="<c:url value="/ajuda.jsp"/>"><i class="icon-question-sign"> </i> Ajuda</a></li>              
             </ul>
+            
+            <c:if test="${usuario != null}">
+	            <ul class="nav pull-right">
+	            	<li><a href="<c:url value="/"/>"><i class="icon-user"> </i>${usuario.nome}</a></li>
+	            </ul>
+            </c:if>
+            
           </div><!--/.nav-collapse -->
         </div>
       </div>
