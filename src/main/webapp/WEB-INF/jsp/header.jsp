@@ -10,14 +10,15 @@
     <!-- styles -->
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 20px;
-      }
-	.thumbnails img {
-		height: 169px;
-		width: 128px;
-	}
+	     body {
+	        padding-top: 60px;
+	        padding-bottom: 20px;
+	     }
+	     
+		.thumbnails img {
+			height: 169px;
+			width: 128px;
+		 }
 
     </style>
     <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
@@ -45,4 +46,34 @@
 
   <body>
   
+    <div class="navbar  navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="<c:url value="/home/index"/>">Enem Viewer</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="<c:url value="/home/index"/>"><i class="icon-home"></i> Home</a></li>
+              <li><a href="<c:url value="/painel/chart"/>"><i class="icon-folder-close"> </i> Painel</a></li>
+              <li class="dropdown">
+				  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-eye-open"></i> Visualizar Dados<span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+				    <li><a href="<c:url value="/visualizador/sexo"/>"><i class="icon-filter"></i> Agrupados por Sexo</a></li>
+				    <li><a href="<c:url value="/visualizador/idade"/>"><i class="icon-filter"></i> Agrupados por Idade</a></li>
+				  </ul>
+			  </li>
+              <li><a href="<c:url value="/graficos/form"/>"><i class="icon-signal"> </i> Gráficos</a></li>
+              <li><a href="<c:url value="/ajuda/ajuda"/>"><i class="icon-question-sign"> </i> Ajuda</a></li>              
+            
+            </ul>
+            
+            <c:if test="${usuario != null}">
+	            <ul class="nav pull-right">
+	            	<li><a href="<c:url value="/"/>"><i class="icon-user"> </i>${usuario.nome}</a></li>
+	            </ul>
+            </c:if>
+            
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 

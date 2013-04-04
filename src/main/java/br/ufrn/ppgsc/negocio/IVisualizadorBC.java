@@ -15,6 +15,8 @@ public interface IVisualizadorBC extends IBusinessController  {
 	
 	public List<Object> listarSexoInscritosPorUF(UnidadeFederativa uf) throws NegocioException, DatabaseException;
 	
+	public List<Object> calcularMediaIdade(UnidadeFederativa uf) throws NegocioException, DatabaseException;
+	
 }
 
 

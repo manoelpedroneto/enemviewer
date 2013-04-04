@@ -36,4 +36,9 @@ public class VisualizadorBC implements IVisualizadorBC {
 		return daoInsc.buscarSexosPorUF(uf);
 	}
 	
+	public List<Object> calcularMediaIdade(UnidadeFederativa uf) throws DatabaseException {
+		List<Object> list = daoInsc.buscarMediaIdadePorUF(uf);
+		return list;
+	}
+	
 }
